@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #01132e;
+  --color-secondary: #112542;
+}
+
+.our-developement-process-card{
+    clip-path: polygon(0px 0px, 0px 100%, 100% 100%, 100% 50%, 0% -1%);
+}
+
