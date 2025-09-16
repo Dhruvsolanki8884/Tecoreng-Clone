@@ -1,0 +1,28 @@
+.path-container {
+  position: relative;
+  width: 400px; /* match your image width */
+  height: 200px; /* match your image height */
+}
+
+/* ball following infinity path */
+.ball {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px; /* ball size */
+  height: 45px;
+  offset-path: path(
+    "M0,100 C50,0 150,0 200,100 C250,200 350,200 400,100 C350,0 250,0 200,100 C150,200 50,200 0,100Z"
+  );
+  offset-rotate: auto;
+  animation: moveBall 10s linear infinite;
+}
+
+@keyframes moveBall {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
