@@ -1,6 +1,6 @@
 import React from "react";
 import HeroSection from "../sections/Hero/HeroSection";
-import VideoSection from "../sections/video/videosection";
+import VideoSection from "../sections/video/VideoSection";
 import BallSection from "../sections/Ball/BallSection";
 import ServicesSection from "../sections/Services/ServicesSection";
 import GetinTouchSection from "../sections/GetInTouch/GetinTouchSection";
@@ -23,7 +23,7 @@ function Home() {
       <GetinTouchSection />
       <SpecializationSection />
       <FlexibleSection />
-      <OurDevelopmentProcessSection/>
+      <OurDevelopmentProcessSection />
       <SuccessStories />
       <IndustriesSection />
       <TestimonialSlider />
