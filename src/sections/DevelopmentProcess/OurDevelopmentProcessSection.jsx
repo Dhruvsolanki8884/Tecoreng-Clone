@@ -1,4 +1,4 @@
-import React from "react"; 
+import React from "react";
 import OurDevelopmentProcessCard from "./OurDevelopmentProcessCard";
 
 const cardsData = [
@@ -43,9 +43,9 @@ const cardsData = [
 
 function OurDevelopmentProcessSection() {
   return (
-    <section className="bg-secondary w-full py-9">
+    <section className="bg-secondary w-full py-10">
       <div className="container mx-auto px-4">
-        <h2 className="md:text-5xl mb-4 text-2xl font-medium text-center md:text-left">
+        <h2 className="md:text-5xl mb-4 text-2xl font-medium text-center md:text-left text-white">
           Our Development Process
         </h2>
 
@@ -56,7 +56,7 @@ function OurDevelopmentProcessSection() {
             className="mx-auto md:mx-0"
           />
 
-          <div className="flex flex-col gap-8 mt-10">
+          <div className="flex flex-col gap-6 mt-10">
             {cardsData.map((data, index) => (
               <OurDevelopmentProcessCard
                 key={index}
