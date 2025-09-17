@@ -1,5 +1,5 @@
 import React from "react";
-import Slider from "react-slick"; 
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -36,47 +36,48 @@ const TestimonialSlider = () => {
     dots: true,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 2000, // 4 seconds
+    autoplaySpeed: 3000,
     slidesToShow: 3,
     slidesToScroll: 1,
-    arrows: false, // <== Hides the < > arrows
+    arrows: false,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1280, // xl
         settings: { slidesToShow: 2 },
       },
       {
-        breakpoint: 640,
+        breakpoint: 768, // md
         settings: { slidesToShow: 1 },
       },
     ],
   };
 
   return (
-    <section className="bg-[#0A1128] text-white py-12 px-4">
+    <section className="bg-[#0A1128] text-white py-10 px-4">
       <div className="max-w-7xl mx-auto">
-        {/* Heading on right */}
-        <h2 className="text-3xl md:text-4xl font-bold text-left mb-12">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-left mb-8 md:mb-12">
           Appreciation from Clients
         </h2>
 
         <Slider {...settings}>
           {testimonials.map((item, idx) => (
-            <div key={idx} className="px-3">
+            <div key={idx} className="px-2 sm:px-3">
               <div
                 className="
-                  bg-gradient-to-b from-[#4967ad] to-[#121d43] hover:from-[#4e67a1]
-                  rounded-3xl shadow-2xl
-                  p-8 
-                  h-[350px] md:h-[400px] 
-                  flex flex-col justify-between
+                  bg-gradient-to-b from-[#4967ad] to-[#121d43] 
+                  hover:from-[#4e67a1] rounded-3xl shadow-2xl 
+                  p-5 sm:p-6 md:p-8 
+                  min-h-[280px] sm:min-h-[320px] md:min-h-[380px]
+                  flex flex-col
                 "
               >
-                <div>
-                  <h3 className="font-bold text-2xl">{item.name}</h3>
-                  <p className="text-sm opacity-80">{item.title}</p>
-                  <p className="mt-4 text-base leading-relaxed">{item.text}</p>
-                </div>
+                <h3 className="font-bold text-lg sm:text-xl md:text-2xl">
+                  {item.name}
+                </h3>
+                <p className="text-xs sm:text-sm opacity-80">{item.title}</p>
+                <p className="mt-3 sm:mt-4 text-sm sm:text-base leading-relaxed">
+                  {item.text}
+                </p>
               </div>
             </div>
           ))}

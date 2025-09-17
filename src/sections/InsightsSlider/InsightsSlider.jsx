@@ -64,39 +64,40 @@ const InsightsSlider = () => {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1024, // tablet
+        breakpoint: 1280, // large tablets / laptops
         settings: { slidesToShow: 2 },
       },
       {
-        breakpoint: 640, // mobile
+        breakpoint: 768, // mobile
         settings: { slidesToShow: 1 },
       },
     ],
   };
 
   return (
-    <section className="bg-[#06142e] py-10">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-white mb-8 text-center">
+    <section className="bg-[#06142e] py-8 sm:py-10">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 sm:mb-8 text-center">
           Tecoreng Insights
         </h2>
+
         <Slider {...settings}>
           {insights.map((item) => (
-            <div key={item.id} className="px-3">
+            <div key={item.id} className="px-2 sm:px-3">
               <div className="bg-[#0c1b3b] rounded-2xl overflow-hidden shadow-lg h-full flex flex-col">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="h-56 w-full object-cover"
+                  className="h-40 sm:h-48 md:h-56 w-full object-cover"
                 />
-                <div className="p-5 flex flex-col flex-grow">
-                  <h3 className="text-lg font-semibold text-white mb-2">
+                <div className="p-4 sm:p-5 flex flex-col flex-grow">
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white mb-2 line-clamp-2">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-gray-300 mb-3">
+                  <p className="text-[10px] sm:text-xs text-gray-300 mb-3">
                     {item.date} - {item.author}
                   </p>
-                  <p className="text-gray-400 text-sm flex-grow">
+                  <p className="text-gray-400 text-xs sm:text-sm flex-grow line-clamp-4">
                     {item.excerpt}
                   </p>
                 </div>
