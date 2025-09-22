@@ -76,14 +76,14 @@ function GetinTouchSection() {
         ))}
       </div>
 
-      {/* Bottom 4 boxes */}
+      {/* Bottom 4 boxes (bigger & responsive) */}
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
         {bottomBoxes.map((box, index) => (
           <div
             key={index}
-            className="bg-[#0f1a3b] rounded-2xl p-6 flex items-center justify-center text-center shadow-xl shadow-black/30 hover:scale-105 transition-transform duration-300"
+            className="bg-[#0f1a3b] rounded-2xl p-8 md:p-10 flex items-center justify-center text-center shadow-xl shadow-black/30 hover:scale-105 transition-transform duration-300"
           >
-            <h3 className="text-lg md:text-xl font-medium">{box.title}</h3>
+            <h3 className="text-xl md:text-2xl font-semibold">{box.title}</h3>
           </div>
         ))}
       </div>

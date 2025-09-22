@@ -3,7 +3,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [aboutOpen, setAboutOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false); // for mobile only
 
   const handleLinkClick = () => {
     setMenuOpen(false);
@@ -25,47 +25,66 @@ function Navbar() {
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center space-x-8 text-[17px] font-medium">
           <li>
-            <a href="#" className="hover:text-orange-400">
+            <a
+              href="#"
+              className="relative cursor-pointer hover:text-orange-400 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-orange-400 after:transition-all after:duration-300 hover:after:w-full"
+            >
               Services
             </a>
           </li>
 
           {/* About Us Dropdown */}
           <li className="relative group">
+            {/* only hover triggers on desktop */}
             <button
-              onClick={() => setAboutOpen(!aboutOpen)}
-              className="hover:text-orange-400 flex items-center"
+              type="button"
+              className="relative flex items-center cursor-pointer hover:text-orange-400 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-orange-400 after:transition-all after:duration-300 hover:after:w-full"
             >
               About Us ▾
             </button>
-            {aboutOpen && (
-              <ul className="absolute left-0 mt-2 w-48 bg-white text-black rounded-md shadow-lg">
-                <li>
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-100">
-                    Who We Are
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="block px-4 py-2 hover:bg-gray-100">
-                    Industries We Serve
-                  </a>
-                </li>
-              </ul>
-            )}
+
+            {/* dropdown with slide animation */}
+            <ul className="absolute left-0 mt-2 w-56 bg-[#0a1a33] text-white rounded-md shadow-lg transform transition-all duration-300 ease-out origin-top scale-y-0 opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:scale-y-100">
+              <li>
+                <a
+                  href="#"
+                  className="block px-4 py-2 hover:bg-orange-600 hover:text-white cursor-pointer"
+                >
+                  Who We Are
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="block px-4 py-2 hover:bg-orange-600 hover:text-white cursor-pointer"
+                >
+                  Industries We Serve
+                </a>
+              </li>
+            </ul>
           </li>
 
           <li>
-            <a href="#" className="hover:text-orange-400">
+            <a
+              href="#"
+              className="relative cursor-pointer hover:text-orange-400 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-orange-400 after:transition-all after:duration-300 hover:after:w-full"
+            >
               Career
             </a>
           </li>
           <li>
-            <a href="#" className="hover:text-orange-400">
+            <a
+              href="#"
+              className="relative cursor-pointer hover:text-orange-400 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-orange-400 after:transition-all after:duration-300 hover:after:w-full"
+            >
               Portfolio
             </a>
           </li>
           <li>
-            <a href="#" className="hover:text-orange-400">
+            <a
+              href="#"
+              className="relative cursor-pointer hover:text-orange-400 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-orange-400 after:transition-all after:duration-300 hover:after:w-full"
+            >
               Blog
             </a>
           </li>
@@ -120,7 +139,7 @@ function Navbar() {
               About Us ▾
             </button>
             {aboutOpen && (
-              <ul className="ml-4 mt-1 space-y-1 text-gray-300">
+              <ul className="ml-4 mt-1 space-y-1 text-gray-300 transition-all duration-300">
                 <li>
                   <a
                     href="#"
